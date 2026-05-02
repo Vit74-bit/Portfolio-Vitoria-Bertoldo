@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitória Bertoldo | Portfólio</title>
+  <meta name="description" content="Portfólio profissional de Vitória Bertoldo, jornalista com atuação em comunicação digital, conteúdo, SEO, branding e projetos editoriais." />
+  <style>
+    :root {
+      --white: #ffffff;
+      --black: #050505;
+      --soft: #f4f4f1;
+      --line: #0d0d0d;
+      --muted: #555555;
+      --muted-light: #c7c7c7;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--black);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--black);
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(18px);
+      font-family: Arial, sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .brandmark { font-weight: 800; }
+    .nav { display: flex; gap: 22px; color: var(--muted); }
+    .nav a:hover { color: var(--black); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 48px;
+      min-height: 680px;
+      align-items: center;
+      padding: 74px 0 62px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      color: var(--black);
+      font-size: 11px;
+      margin-bottom: 22px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 26px;
+      font-size: clamp(54px, 8vw, 112px);
+      line-height: .88;
+      letter-spacing: -.075em;
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 0 32px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .cta-row, .contact { display: flex; gap: 12px; flex-wrap: wrap; font-family: Arial, sans-serif; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid var(--black);
+      background: var(--white);
+      color: var(--black);
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: 11px;
+      font-weight: 800;
+      transition: .18s ease;
+    }
+
+    .btn.primary, .btn:hover { background: var(--black); color: var(--white); }
+
+    .hero-panel {
+      min-height: 500px;
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-panel .small {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--muted-light);
+    }
+
+    .hero-panel h2 {
+      max-width: 430px;
+      margin: 0;
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: .92;
+      letter-spacing: -.055em;
+      font-weight: 500;
+    }
+
+    .hero-panel .bottom-line {
+      border-top: 8px solid var(--white);
+      padding-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 10px;
+      color: var(--muted-light);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--black);
+      margin-bottom: 72px;
+      background: var(--white);
+    }
+
+    .stat { padding: 28px; border-right: 1px solid var(--black); }
+    .stat:last-child { border-right: 0; }
+    .stat strong { display: block; font-size: 34px; line-height: 1; margin-bottom: 10px; letter-spacing: -.05em; }
+    .stat span { font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: .11em; color: var(--muted); font-size: 10px; }
+
+    section { padding: 54px 0; }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, 440px);
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 30px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .section-title h2 { margin: 0; font-size: clamp(36px, 5vw, 58px); line-height: .95; letter-spacing: -.055em; font-weight: 500; }
+    .section-title p { margin: 0; color: inherit; opacity: .72; font-size: 16px; }
+
+    .work-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      background: var(--black);
+      color: var(--white);
+      padding: 70px 0;
+    }
+
+    .work-inner { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+    .work-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 430px;
+      border: 1px solid var(--white);
+      background: var(--black);
+      color: var(--white);
+      transition: .18s ease;
+    }
+
+    .work-card:hover { transform: translateY(-4px); }
+
+    .cover {
+      min-height: 170px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--white);
+      color: var(--black);
+      border-bottom: 1px solid var(--white);
+    }
+
+    .kicker, .tag, .chip {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .kicker { color: var(--muted); }
+    .cover-title { font-size: 34px; line-height: .95; letter-spacing: -.05em; font-weight: 500; }
+    .card-body { display: flex; flex-direction: column; flex: 1; padding: 22px; }
+    .tag { display: inline-flex; width: max-content; margin-bottom: 14px; padding: 6px 9px; border: 1px solid var(--white); color: var(--white); }
+    .card-body h3 { margin: 0 0 10px; font-size: 23px; line-height: 1.08; letter-spacing: -.025em; font-weight: 500; }
+    .card-body p { flex: 1; margin: 0 0 20px; color: var(--muted-light); font-size: 15px; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 9px 10px; border: 1px solid var(--white); background: transparent; color: var(--white); }
+    .chip:hover { background: var(--white); color: var(--black); }
+
+    .feature {
+      border: 1px solid var(--white);
+      background: var(--white);
+      color: var(--black);
+      padding: 28px;
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .feature h3 { margin: 0 0 6px; font-size: 26px; letter-spacing: -.035em; font-weight: 500; }
+    .feature p { margin: 0; color: var(--muted); }
+
+    .split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: start; }
+
+    .about-box {
+      border: 1px solid var(--black);
+      background: var(--black);
+      color: var(--white);
+      padding: 34px;
+      min-height: 410px;
+    }
+
+    .about-box h2 { margin: 0 0 20px; font-size: clamp(34px, 4vw, 48px); line-height: .96; letter-spacing: -.055em; font-weight: 500; }
+    .about-box p { color: var(--muted-light); }
+    .list { display: grid; gap: 14px; }
+    .list-item { border: 1px solid var(--black); background: var(--white); padding: 22px; }
+    .list-item h3 { margin: 0 0 5px; font-size: 22px; font-weight: 500; letter-spacing: -.025em; }
+    .list-item p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .footer {
+      margin-top: 52px;
+      padding: 48px 0 32px;
+      border-top: 1px solid var(--black);
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+    }
+
+    .footer h2 { margin: 0 0 10px; font-size: clamp(40px, 5vw, 60px); line-height: .92; letter-spacing: -.06em; font-weight: 500; }
+    .footer p { margin: 0 0 6px; color: var(--muted); }
+    .contact { justify-content: flex-end; }
+    .contact-text { font-family: Arial, sans-serif; letter-spacing: .04em; font-size: 13px; color: var(--black); }
+
+    @media (max-width: 920px) {
+      .hero, .split, .section-title { grid-template-columns: 1fr; }
+      .grid, .stats { grid-template-columns: 1fr 1fr; }
+      .nav { display: none; }
+      .hero { min-height: auto; }
+    }
+
+    @media (max-width: 640px) {
+      .page, .work-inner { width: min(100% - 28px, 1160px); }
+      .grid, .stats, .feature { grid-template-columns: 1fr; }
+      .stat { border-right: 0; border-bottom: 1px solid var(--black); }
+      .stat:last-child { border-bottom: 0; }
+      .hero-panel .bottom-line { grid-template-columns: 1fr; }
+      .footer { display: block; }
+      .contact { justify-content: flex-start; margin-top: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brandmark">Vitória Bertoldo</div>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#competencias">Competências</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Comunicação • Conteúdo • Branding Digital</div>
+        <h1>Vitória Bertoldo</h1>
+        <p>Jornalista com experiência em comunicação digital, produção editorial, SEO e branding. Transformo objetivos de marca em narrativas claras, estratégicas e consistentes.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#trabalhos">Ver trabalhos</a>
+          <a class="btn" href="mailto:vnb30999@gmail.com">vnb30999@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/vit%C3%B3riabertoldo/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Resumo do portfólio">
+        <div class="small">Selected work / editorial strategy</div>
+        <h2>Repertório editorial com visão de marca, negócio e presença digital.</h2>
+        <div class="bottom-line">
+          <span>Jornalismo</span>
+          <span>SEO</span>
+          <span>Branding</span>
+          <span>Conteúdo B2B</span>
+        </div>
+      </aside>
+    </section>
+
+    <div class="stats" aria-label="Destaques profissionais">
+      <div class="stat"><strong>9+</strong><span>anos em comunicação digital</span></div>
+      <div class="stat"><strong>2021</strong><span>formação em jornalismo</span></div>
+      <div class="stat"><strong>BR/UK</strong><span>experiência nacional e internacional</span></div>
+      <div class="stat"><strong>Expocom</strong><span>melhor reportagem multimídia</span></div>
+    </div>
+
+    <section id="trabalhos" class="work-section">
+      <div class="work-inner">
+        <div class="section-title">
+          <h2>Trabalhos selecionados</h2>
+          <p>Uma seleção de projetos editoriais, institucionais e digitais em diferentes formatos, veículos e segmentos.</p>
+        </div>
+
+        <div class="grid">
+          <article class="work-card">
+            <div class="cover"><div class="kicker">3DCRIAR</div><div class="cover-title">Blog, site e campanhas</div></div>
+            <div class="card-body">
+              <span class="tag">Conteúdo & Branding</span>
+              <h3>Planejamento e produção para marca B2B</h3>
+              <p>Atuação em planejamento editorial, produção de textos, apoio na implementação do novo site e roteiros para campanhas audiovisuais.</p>
+              <div class="links">
+                <a class="chip" href="https://3dcriar.com.br/blog/" target="_blank" rel="noopener">Blog</a>
+                <a class="chip" href="https://www.instagram.com/3dcriar/" target="_blank" rel="noopener">Instagram</a>
+                <a class="chip" href="https://youtu.be/t5AQ2MZTZyg?si=s3kLodWtxEcLPqD2" target="_blank" rel="noopener">Campanha 1</a>
+                <a class="chip" href="https://youtu.be/e77TBeOU5i8?si=MrkWRx-D252cZEDY" target="_blank" rel="noopener">Campanha 2</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="cover"><div class="kicker">CNN Brasil / R7</div><div class="cover-title">Bang Showbiz</div></div>
+            <div class="card-body">
+              <span class="tag">Jornalismo Digital</span>
+              <h3>Produção para grandes portais</h3>
+              <p>Produção de matérias de entretenimento distribuídas em veículos de grande alcance, com rotina editorial, apuração e adaptação de linguagem para web.</p>
+              <div class="links">
+                <a class="chip" href="https://www.cnnbrasil.com.br/autor/bang-showbiz/pagina/8/?hidemenu=true" target="_blank" rel="noopener">CNN Brasil</a>
+                <a class="chip" href="https://entretenimento.r7.com/bang-showbiz/" target="_blank" rel="noopener">R7</a>
+                <a class="chip" href="https://www.dailymotion.com/playlist/x72xye" target="_blank" rel="noopener">Vídeos</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="cover"><div class="kicker">Panvel</div><div class="cover-title">Saúde e bem-estar</div></div>
+            <div class="card-body">
+              <span class="tag">Conteúdo Informativo</span>
+              <h3>Matérias e entrevistas para blog</h3>
+              <p>Produção de conteúdos sobre saúde com linguagem clara, foco educativo e atenção à credibilidade das informações.</p>
+              <div class="links"><a class="chip" href="https://blog.panvel.com/" target="_blank" rel="noopener">Blog Panvel</a></div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="cover"><div class="kicker">O Avesso da Fome</div><div class="cover-title">Reportagem multimídia</div></div>
+            <div class="card-body">
+              <span class="tag">Projeto Premiado</span>
+              <h3>Podcast e projeto experimental em jornalismo</h3>
+              <p>Projeto reconhecido no Prêmio Expocom Sudeste, na categoria Jornalismo, modalidade produção laboratorial em jornalismo digital.</p>
+              <div class="links">
+                <a class="chip" href="https://open.spotify.com/show/2eoGh7WQFixXsyc5qoAhC1" target="_blank" rel="noopener">Ouvir podcast</a>
+                <a class="chip" href="certificado_vencedor_expocom_coautor.pdf" target="_blank" rel="noopener">Certificado</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="cover"><div class="kicker">Revista Amélia</div><div class="cover-title">Editorial impresso</div></div>
+            <div class="card-body">
+              <span class="tag">Revista & Direção de Arte</span>
+              <h3>Projeto editorial universitário</h3>
+              <p>Participação na produção da revista Amélia, com atuação como diretora de arte e autoria em conteúdos editoriais.</p>
+              <div class="links"><a class="chip" href="revista_amelia_28_paginas_148x210.pdf" target="_blank" rel="noopener">Abrir revista</a></div>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="cover"><div class="kicker">SEO & Conteúdo</div><div class="cover-title">Estratégia digital</div></div>
+            <div class="card-body">
+              <span class="tag">Performance Editorial</span>
+              <h3>Conteúdo otimizado para marcas e buscadores</h3>
+              <p>Experiência em blogs, link building, pautas estratégicas, produção institucional e leitura de oportunidades para posicionamento orgânico.</p>
+              <div class="links"><a class="chip" href="#contato">Solicitar links</a></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="feature">
+          <div>
+            <h3>Prêmio Expocom Sudeste</h3>
+            <p>Certificado de vencedora pelo trabalho “O Avesso da Fome”, desenvolvido na categoria Jornalismo.</p>
+          </div>
+          <a class="btn primary" href="certificado_vencedor_expocom_coautor.pdf" target="_blank" rel="noopener">Ver certificado</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="split">
+      <div class="about-box">
+        <div class="eyebrow" style="color:#ffffff">Sobre</div>
+        <h2>Comunicação com clareza, repertório e intenção.</h2>
+        <p>Sou jornalista formada desde 2021, com experiência em comunicação digital, marketing de conteúdo, relações públicas digitais e SEO. Já atuei em projetos nacionais e internacionais, incluindo produção para o MSN Brasil por meio de uma agência de Londres.</p>
+        <p>Minha atuação combina pensamento editorial, visão estratégica e leitura de dados para construir conteúdos que fortalecem presença digital, reputação e posicionamento de marca.</p>
+      </div>
+
+      <div class="list" id="competencias">
+        <div class="list-item"><h3>Conteúdo & Editorial</h3><p>Produção de matérias, textos institucionais, blogs, entrevistas, roteiros e campanhas digitais.</p></div>
+        <div class="list-item"><h3>SEO & Performance</h3><p>Estratégia de palavras-chave, link building, otimização de conteúdos e análise de desempenho.</p></div>
+        <div class="list-item"><h3>Branding & Comunicação</h3><p>Tom de voz, posicionamento, comunicação institucional e narrativas para autoridade de marca.</p></div>
+        <div class="list-item"><h3>Projetos Multissetoriais</h3><p>Experiência com tecnologia, saúde, educação, varejo, e-commerce e comunicação B2B.</p></div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contato">
+      <div>
+        <h2>Vamos conversar?</h2>
+        <p>Disponível para oportunidades em comunicação, conteúdo, branding e estratégia digital.</p>
+        <p class="contact-text">E-mail: <a href="mailto:vnb30999@gmail.com">vnb30999@gmail.com</a></p>
+        <p class="contact-text">LinkedIn: <a href="https://www.linkedin.com/in/vit%C3%B3riabertoldo/" target="_blank" rel="noopener">linkedin.com/in/vitóriabertoldo</a></p>
+      </div>
+      <div class="contact">
+        <a class="btn primary" href="mailto:vnb30999@gmail.com">Enviar e-mail</a>
+        <a class="btn" href="https://www.linkedin.com/in/vit%C3%B3riabertoldo/" target="_blank" rel="noopener">Abrir LinkedIn</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
